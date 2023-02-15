@@ -1,6 +1,8 @@
 package src;
 
 
+import java.util.Arrays;
+
 class Solution1 {
     public String solution(String s) {
         String answer = "";
@@ -179,3 +181,28 @@ class Solution13 {
         return answer;
     }
 }
+//import java.util.*;
+class Solution14 {
+    public int[] solution(int[] arr, int divisor) {
+        int a = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] % divisor == 0){
+                a++;
+            }
+        }
+        if(a == 0){
+            int[]answer = {-1};
+            return answer;
+        }
+        int[]answer = new int[a];
+        for(int i = 0, j =0;i < arr.length; i++){
+            if(arr[i] % divisor == 0){
+                answer[j] = arr[i];
+                j++;
+            }
+        }
+        Arrays.sort(answer); //오름차순으로 정렬하는 매소드
+        return answer;
+    }
+}
+
