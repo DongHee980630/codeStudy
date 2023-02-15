@@ -104,6 +104,67 @@ class Solution8 {
     }
 }
 
+//핸드폰 번호 가리기
+class Solution9 {
+    public String solution(String phone_number) {
+        String answer = "";
+        for(int i = 0; i < phone_number.length(); i ++){
+            if(i < phone_number.length() - 4){
+                answer += "*";
+            }else{
+                answer += phone_number.charAt(i);
+            }
+        }
+        return answer;
+    }
+}
+
+//행렬의 덧셈
+class Solution10 {
+    public int[][] solution(int[][] arr1, int[][] arr2) {
+        int[][] answer = new int[arr1.length][arr1[0].length];
+        for(int i = 0; i < arr1.length; i++){
+            for(int j = 0; j < arr1[0].length; j++){
+                answer[i][j] = arr1[i][j] + arr2[i][j];
+            }
+        }
+        return answer;
+    }
+
+}
+
+//x만큼 간격이 있는 n개의 숫자
+class Solution11 {
+    public long[] solution(int x, int n) {
+        long[] answer = new long[n];
+        long y = x;
+
+        for(int i = 0; i < answer.length; i++){
+            answer[i] = y;
+            y += x;
+        }
+        return answer;
+    }
+}
+
+//부족한 금액 계산하기
+class Solution {
+    public long solution(int price, int money, int count) {
+        long answer = 0;
+        long sum = 0;
+        for(int i = 0; i <= count; i++){
+            sum += price * i;
+        }
+        if(sum > money){
+            answer = sum - money;
+        }
+
+        return answer;
+    }
+}
+
+
+//2016년
 class Solution13 {
     public String solution(int a, int b) {
         String answer = "";
