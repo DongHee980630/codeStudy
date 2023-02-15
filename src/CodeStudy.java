@@ -148,7 +148,7 @@ class Solution11 {
 }
 
 //부족한 금액 계산하기
-class Solution {
+class Solution12 {
     public long solution(int price, int money, int count) {
         long answer = 0;
         long sum = 0;
