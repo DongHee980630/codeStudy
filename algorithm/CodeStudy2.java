@@ -1,6 +1,7 @@
 package algorithm;
 
 import java.util.Arrays;
+import java.util.*;
 
 //핸드폰 번호 가리기
 class Solution9 {
@@ -182,16 +183,17 @@ class Solution19 {
 
 //완주하지 못한 선수
 class Solution20 {
-    public String solution(int n) {
-        String answer = "";
-        for(int i = 0; i < n; i++){
-            if(i % 2 ==0){
-                answer += "수";
-            }else{
-                answer += "박";
+    public String solution(String[] participant, String[] completion) {
+
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+        for(int i = 0; i < completion.length; i++){
+            if(!participant[i].equals(completion[i])){
+                return participant[i];
+
             }
         }
-        return answer;
+
+        return participant[participant.length - 1 ];
     }
 }
-

@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.Arrays;
+
 //이상한 문자 만들기
 class Solution21 {
     public String solution(String s) {
@@ -45,6 +47,23 @@ class Solution23 {
             n /= 10;
         }
         return answer;
+    }
+}
+
+//내림차순으로 배치하기
+class Solution24 {
+    public long solution(long n) {
+        String str = n +"";
+        String ans = "";
+        char[] arr = new char[str.length()];
+        for(int i = 0; i < str.length(); i++){
+            arr[i] = str.charAt(i);
+        }
+        Arrays.sort(arr);
+        for(int i = arr.length -1; i >=0; i--){
+            ans += arr[i];
+        }
+        return Long.parseLong(ans);
     }
 }
 
